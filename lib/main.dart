@@ -1,3 +1,4 @@
+import 'package:doctor_appointment_app/providers/app_theme_provider.dart';
 import 'package:doctor_appointment_app/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -5,7 +6,11 @@ import 'package:provider/provider.dart';
 void main() {
   runApp(
     MultiProvider(
-      providers: [],
+      providers: [
+        ChangeNotifierProvider(
+          create: (_) => AppThemeProvider(),
+        ),
+      ],
       child: const MyApp(),
     ),
   );

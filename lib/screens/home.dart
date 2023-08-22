@@ -3,6 +3,7 @@ import 'dart:developer';
 import 'package:doctor_appointment_app/screens/oobe.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -13,12 +14,10 @@ class HomePage extends StatelessWidget {
       backgroundColor: const Color(0xff313131),
       body: Column(
         children: [
-          Expanded(
-            child: Container(
-              child: const Image(
-                image: AssetImage("lib/assets/doctor.png"),
-                alignment: Alignment.bottomCenter,
-              ),
+          const Expanded(
+            child: Image(
+              image: AssetImage("lib/assets/doctor.png"),
+              alignment: Alignment.bottomCenter,
             ),
           ),
           Container(
@@ -35,48 +34,55 @@ class HomePage extends StatelessWidget {
               children: [
                 RichText(
                   textAlign: TextAlign.center,
-                  text: const TextSpan(
-                      style: TextStyle(
+                  text: TextSpan(
+                      style: GoogleFonts.inter(
                         fontSize: 25,
                         color: Colors.white,
                         fontWeight: FontWeight.w700,
                       ),
                       children: [
-                        TextSpan(text: "Your "),
+                        const TextSpan(text: "Your "),
                         TextSpan(
                           text: "Ultimate Doctor\n",
-                          style: TextStyle(
-                            color: Color(0xff313131),
+                          style: GoogleFonts.inter(
+                            fontSize: 25,
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xff313131),
                           ),
                         ),
-                        TextSpan(text: "Appointment Booking App"),
+                        const TextSpan(
+                          text: "Appointment Booking App",
+                        ),
                       ]),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
-                const Text(
+                Text(
                   "Book appointments effortlessly and manage your health journey.",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 15, color: Colors.white60),
+                  style: GoogleFonts.inter(
+                    fontSize: 15,
+                    color: Colors.white60,
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
                 ),
                 TextButton(
-                  style: const ButtonStyle(
-                      backgroundColor: MaterialStatePropertyAll(
+                  style: ButtonStyle(
+                      backgroundColor: const MaterialStatePropertyAll(
                         Color(0xff313131),
                       ),
-                      foregroundColor: MaterialStatePropertyAll(
+                      foregroundColor: const MaterialStatePropertyAll(
                         Colors.white,
                       ),
                       textStyle: MaterialStatePropertyAll(
-                        TextStyle(
+                        GoogleFonts.inter(
                           fontSize: 18,
                         ),
                       ),
-                      padding: MaterialStatePropertyAll(
+                      padding: const MaterialStatePropertyAll(
                         EdgeInsets.symmetric(
                           vertical: 15,
                         ),
@@ -97,23 +103,24 @@ class HomePage extends StatelessWidget {
                 ),
                 RichText(
                   textAlign: TextAlign.center,
-                  text: TextSpan(children: [
-                    const TextSpan(
-                      text: "Already have an account? ",
-                      style: TextStyle(
+                  text: TextSpan(
+                      style: GoogleFonts.inter(
                         fontSize: 20,
                       ),
-                    ),
-                    TextSpan(
-                      text: "Sign in",
-                      style: const TextStyle(
-                        fontSize: 20,
-                        color: Color(0xff313131),
-                        decoration: TextDecoration.underline,
-                      ),
-                      recognizer: TapGestureRecognizer()..onTap = () {},
-                    ),
-                  ]),
+                      children: [
+                        const TextSpan(
+                          text: "Already have an account? ",
+                        ),
+                        TextSpan(
+                          text: "Sign in",
+                          style: GoogleFonts.inter(
+                            fontWeight: FontWeight.w700,
+                            color: const Color(0xff313131),
+                            decoration: TextDecoration.underline,
+                          ),
+                          recognizer: TapGestureRecognizer()..onTap = () {},
+                        ),
+                      ]),
                 ),
                 const SizedBox(
                   height: 20,
