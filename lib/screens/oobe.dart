@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -104,34 +105,44 @@ class _OobeScreenState extends State<OobeScreen> {
           const SizedBox(
             height: 10,
           ),
-          Image(
-            alignment: Alignment.topCenter,
-            image: AssetImage(slides[slideIndex].slideImage),
-          ),
-          const SizedBox(
-            height: 40,
-          ),
-          RichText(
-            textAlign: TextAlign.center,
-            text: TextSpan(
-              style: GoogleFonts.inter(
-                fontSize: 25,
-                color: Colors.white,
-                fontWeight: FontWeight.w700,
-              ),
-              children: slides[slideIndex].slideTitleWidget,
+          // Image(
+          //   alignment: Alignment.topCenter,
+          //   image: AssetImage(slides[slideIndex].slideImage),
+          // ),
+          // const SizedBox(
+          //   height: 40,
+          // ),
+          // RichText(
+          //   textAlign: TextAlign.center,
+          //   text: TextSpan(
+          //     style: GoogleFonts.inter(
+          //       fontSize: 25,
+          //       color: Colors.white,
+          //       fontWeight: FontWeight.w700,
+          //     ),
+          //     children: slides[slideIndex].slideTitleWidget,
+          //   ),
+          // ),
+          // const SizedBox(
+          //   height: 20,
+          // ),
+          // Text(
+          //   slides[slideIndex].subtitle,
+          //   textAlign: TextAlign.center,
+          //   style: GoogleFonts.inter(
+          //     color: Colors.white,
+          //     fontSize: 14,
+          //   ),
+          // ),
+          CarouselSlider(
+            options: CarouselOptions(
+              onScrolled: null,
             ),
-          ),
-          const SizedBox(
-            height: 20,
-          ),
-          Text(
-            slides[slideIndex].subtitle,
-            textAlign: TextAlign.center,
-            style: GoogleFonts.inter(
-              color: Colors.white,
-              fontSize: 14,
-            ),
+            items: [
+              Text("Page 1"),
+              Text("Page 2"),
+              Text("Page 3"),
+            ],
           ),
           const SizedBox(
             height: 40,
